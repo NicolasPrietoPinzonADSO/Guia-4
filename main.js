@@ -1,19 +1,24 @@
 addEventListener("DOMContentLoaded", () =>{
-    // 1. En una granja se requiere saber alguna información para determinar el precio de venta por cada kilo
-    // de huevo. precio se determina a traves del promedio de calidad de las N gallinas que hay en la
-    // granja. La calidad de cada gallina se obtiene según la formula:
-    // calidad = (peso de la gallina * altura de la gallina)/Numero de huevos que pone;
-    let numeroGallinas = 0
-    do{
-        let peso = Number(prompt('Ingrese el peso de la gallina en kilos'))
-        let altura = Number(prompt('Ingrese la altura'))
-        let numeroHue = Number(prompt('Ingrese el numero de huevos que pone la gallina'))
-        let calidad = (peso*altura)/numeroHue
-        alert(`La calidad de la gallina es de ${calidad}`)
-        listaCalidad.push(calidad)
-    }
-    while(confirm('Desea ingresar a otra persona')){
-        console.log(listaCalidad);
-    }
+    // 2. Hacer un algoritmo que al ingresar 2 números por la pantalla y se calcule la suma, resta, multiplicación
+    // y división. El proceso debe terminar cuando se hallan realizado 10 procesos (Hacer uso de
+    // contadores
+    
+    procesosTot = 0
 
+    while (procesosTot<10){
+        let num1 = Number(prompt('Ingrese el primer numero'))
+        let num2 = Number(prompt('Ingrese el segundo  numero'))
+        let suma = num1+num2
+        let resta = num1-num2
+        let multiplicacion = num1*num2
+        let division = num1/num2
+
+        alert(`El resultado de la suma de ${num1} + ${num2} es : ${suma}`);
+        alert(`El resultado de la resta de ${num1} - ${num2} es : ${resta}`);
+        alert(`El resultado de la multiplicacion de ${num1} * ${num2} es : ${multiplicacion}`);
+        alert(`El resultado de la suma de ${num1} / ${num2} es : ${division   }`);
+
+        procesosTot+=1
+    }
+    
 })
