@@ -1,17 +1,19 @@
 addEventListener("DOMContentLoaded", () =>{
-    // Un avión que viaja 800 Km/hr. Dispara un proyectil auto impulsado, en el momento del disparo, el
-    // avión hace un giro de 90 grados y acelera a 20 mtrs/seg2. El proyectil sigue su curso, acelerando a 10
-    // mtrs./seg2. Diseñe un pseudocódigo que escriba cada segundo, la distancia que separa al avión del
-    // proyectil, hasta que estén a 10,000 mtrs. o más
-    let vAvion = 222.222, vProyectil = 222.222, aAvion = 20, aProyectil = 10
-    let tiempo = 0
-    let hipo = 0
-while (hipo < 10000){
-    tiempo+=1
-    let disAvion = (vAvion*tiempo)+(aAvion*(tiempo**2))/2
-    let disProyectil = (vProyectil*tiempo)+(aProyectil*(tiempo**2))/2
-    hipo = Math.sqrt(disAvion**2+disProyectil**2)
-    console.log(`Segundo ${tiempo}`);
-    console.log(`Recorrido ${Math.round(hipo,2)}`);
+    // 7. Una compañía de seguros tiene contratados a n vendedores. Cada uno hace tres ventas a la semana.
+    // Su política de pagos es que un vendedor recibe un sueldo base, y un 10% extra por comisiones de
+    // sus ventas. El gerente de su compañía desea saber cuanto dinero obtendrá en la semana cada
+    // vendedor por concepto de comisiones por las tres ventas realizadas, y cuanto tomando en cuenta su
+    // sueldo base y sus comisiones.
+    let sueldoBase = 1000000
+    let ventas = 0
+    let comision = 0
+    while (ventas<3){
+        let venta = Number(prompt('Ingrese el valor de su venta'))
+        ventas += 1
+        comision+= venta
     }
+    let comisiones = comision * 0.10
+    let sueldoTotal = comisiones+sueldoBase
+    console.log(`El total de comision del empleado es de ${comisiones}`);
+    console.log(`El sueldo total del empleado es de ${sueldoTotal}`);
 })
