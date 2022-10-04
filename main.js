@@ -1,19 +1,29 @@
 addEventListener("DOMContentLoaded", () =>{
-    // 7. Una compañía de seguros tiene contratados a n vendedores. Cada uno hace tres ventas a la semana.
-    // Su política de pagos es que un vendedor recibe un sueldo base, y un 10% extra por comisiones de
-    // sus ventas. El gerente de su compañía desea saber cuanto dinero obtendrá en la semana cada
-    // vendedor por concepto de comisiones por las tres ventas realizadas, y cuanto tomando en cuenta su
-    // sueldo base y sus comisiones.
-    let sueldoBase = 1000000
-    let ventas = 0
-    let comision = 0
-    while (ventas<3){
-        let venta = Number(prompt('Ingrese el valor de su venta'))
-        ventas += 1
-        comision+= venta
+    // Diseñar un pseudocódigo que calcule el promedio ponderado para alumno del ITT. El cálculo se hace
+    // de la siguiente forma:
+    // Se multiplica cada calificación por los créditos de cada materia
+    // El resultado anterior se suma con los resultados de todas las materias, por separado se suman los
+    // créditos de cada materia y finalmente se divide la suma de todas las materias por sus respectivos
+    // créditos, entre la suma de todos los créditos. (materias: Fundamentos, BD y ética)
+
+    let condicion = 'si'
+    let numeroEstudiante = 1
+    do{
+        creFunda = Number(prompt('Ingrese el valor de los creditos de Fundamentos'))
+        caliFunda = Number(prompt('Ingrese su calificacion de Fundamentos'))
+        creEtica = Number(prompt('Ingrese el valor de los creditos de Etica'))
+        caliEtica = Number(prompt('Ingrese su calificacion de Etica'))
+        creBD = Number(prompt('Ingrese el valor de los creditos de BD'))
+        caliBD = Number(prompt('Ingrese calificacion de BD'))
+
+        notaFunda = creFunda * caliFunda
+        notaEtica = creEtica * caliEtica
+        notaBD = creBD * caliBD
+        totalCreditos = creFunda + creBD + creEtica
+
+        prom = (notaFunda+notaEtica+notaBD)/totalCreditos
+
+        console.log(`Estudainte numero ${numeroEstudiante++} su promedio es de ${prom}`);
     }
-    let comisiones = comision * 0.10
-    let sueldoTotal = comisiones+sueldoBase
-    console.log(`El total de comision del empleado es de ${comisiones}`);
-    console.log(`El sueldo total del empleado es de ${sueldoTotal}`);
+        while (confirm('Va a ingresar otro estudiante')){}
 })
